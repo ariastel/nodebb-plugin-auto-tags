@@ -1,0 +1,18 @@
+{
+	"id": "nodebb-plugin-auto-tags",
+	"name": "NodeBB AutoTags Plugin",
+	"description": "NodeBB Plugin that sets tags based on title/content",
+	"url": "https://github.com/ariastel/nodebb-plugin-auto-tags",
+	"main": "./plugin/index.js",
+	"hooks": [
+		{ "hook": "static:app.load", "method": "hooks.statics.load" },
+		{ "hook": "filter:admin.header.build", "method": "hooks.filters.adminHeaderBuild" },
+		{ "hook": "filter:topic.edit", "method": "hooks.filters.topicEdit" },
+		{ "hook": "filter:topic.post", "method": "hooks.filters.topicPost" },
+		{ "hook": "action:settings.set", "method": "hooks.actions.settingsSet"}
+	],
+	"templates": "templates",
+	"acpScripts": [
+		"client/admin.js"
+	]
+}
